@@ -1,0 +1,70 @@
+body {
+    display: flex;
+}
+
+.nav-bar {
+    float: left;
+    padding: 15px;
+    position: fixed;
+}
+
+main {
+    margin-left: 360px;
+}
+
+button {
+    display: block;
+}
+
+.social-elements {
+    list-style: none;
+}
+
+.social-elements li {
+    display: inline;
+    padding: 20px;
+}
+
+.headshot {
+    max-width: 120px;
+}
+
+.project-image {
+    max-width: 480px;
+}
+
+.btn {
+    margin-right: auto;
+    border: none;
+    padding: 10px 44px;
+    font-size: 36px;
+    position: relative;
+    background-color: white;
+  }
+  .btn::before {
+    transition: all 0.5s ease-in-out;
+    content: '';
+    width: 15px;
+    height: 100%;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .btn .btn-text {
+    color: white;
+    mix-blend-mode: difference;
+  }
+  .btn:hover::before {
+    background: black;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 720px) {
+      .nav-bar {
+          display: none;
+      }
+      main {
+        margin-left: 0;
+    }
+  }
