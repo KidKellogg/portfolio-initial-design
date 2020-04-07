@@ -1,16 +1,23 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
+    background-color: #004063;
+    color: white;
 }
 
 .nav-bar {
     float: left;
     padding: 15px;
     position: fixed;
+    background-color: #004063;
 }
 
 main {
     margin-left: 360px;
-    font-family: "Open Sans", sans-serif; 
+    font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
 
@@ -18,18 +25,22 @@ section {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: grey;
+    
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-button {
-    display: block;
+section p {
+    width: 100%;
 }
 
 .social-elements {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0px;
 }
 
 .social-elements li {
@@ -43,7 +54,11 @@ button {
 }
 
 .project-image {
-    max-width: 480px;
+    max-width: 75%;
+}
+
+#projects img {
+    align-items: center;
 }
 
 .btn {
@@ -52,33 +67,91 @@ button {
     padding: 10px 44px;
     font-size: 36px;
     position: relative;
-    background-color: white;
-  }
-  
-  .btn::before {
+    background-color: #004063;
+    display: block;
+    text-decoration: none;
+}
+
+.btn::before {
     transition: all 0.5s ease-in-out;
     content: '';
     width: 15px;
     height: 100%;
-    background: black;
+    background: #ef7f2f;
     position: absolute;
     top: 0;
     left: 0;
-  }
-  .btn .btn-text {
+}
+
+.btn .btn-text {
     color: white;
     mix-blend-mode: difference;
-  }
-  .btn:hover::before {
-    background: black;
+}
+
+.btn:hover::before {
+    background: #ef7f2f;
     width: 100%;
-  }
-  
-  @media screen and (max-width: 720px) {
-      .nav-bar {
-          display: none;
-      }
-      main {
+}
+
+.openclose {
+    display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .nav-bar {
+        padding: 0px;
+    }
+
+    .openbtn {
+        position: fixed;
+        top: 5px;
+        right: 10px;
+    }
+
+    main {
         margin-left: 0;
     }
-  }
+
+    .social-elements {
+        flex-direction: column;
+    }
+
+    .openclose {
+        display: block;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+}
